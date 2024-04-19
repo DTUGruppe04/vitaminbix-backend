@@ -33,19 +33,19 @@ def get_books(request):
     return JsonResponse(book_list_serialized, safe=False)
 
 # Add items from json
-def add_items(request):
+def add_products(request):
     temp = open('product_app/data.json')
     data = json.load(temp)
 
     for i in range(len(data)):
-        items = Product(data[i]['id'], data[i]['name'], data[i]['price'],
+        products = Product(data[i]['id'], data[i]['name'], data[i]['price'],
                       data[i]['currency'], data[i]['img'])
-        items.save()
+        products.save()
 
-    return HttpResponse('Items added succesfully!', status=200)
+    return HttpResponse('Products added succesfully!', status=200)
 
-# Return all items
-def get_items(request):
-    items = Product.objects.all()
-    item_list_serialized = serializers.serialize('json', items)
-    return JsonResponse(item_list_serialized, safe=False)
+# Return all products
+def get_products(request):
+    products = Product.objects.all()
+    product_list_serialized = serializers.serialize('json', products)
+    return JsonResponse(product_list_serialized, safe=False)
