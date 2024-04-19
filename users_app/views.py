@@ -15,6 +15,7 @@ def add_user_order(request):
             first_name=data['first_name'],
             last_name=data['last_name'],
             email=data['email'],
+            phone_number=data['phone_number'],
             country=data['country'],
             city=data['city'],
             zipcode=data['zipcode'],
