@@ -1,0 +1,38 @@
+[
+	{
+		"id": "1",
+		"name": "D-vitamin, 90ug, 100 stk",
+		"price": 116,
+		"currency": "DKK",
+		"img": "https://www.med24.dk/imgsrv/2020-10-23/31528/1/d-max-100-g-90-tyggetabl.jpg?c=IhGJlU"
+	},
+	{
+		"id": "2",
+		"name": "C-vitamin, 500mg, 250 stk",
+		"price": 150,
+		"currency": "DKK",
+		"img": "https://imagecache.nomeco.dk/image/209048/medium"
+	},
+	{
+		"id": "3",
+		"name": "C-vitamin Depot, 500mg, 250 stk",
+		"price": 175,
+		"currency": "DKK",
+		"img": "https://apopro.dk/Images/c-vitamin-500-med-hyben-kosttilskud-240-stk-209048"
+	},
+	{
+		"id": "4",
+		"name": "fish-oil-1000-120",
+		"price": 69,
+		"currency": "DKK",
+		"img": "https://www.pricerunner.dk/product/640x640/1576957364/Apovit-Omega-3-1000mg-120-stk.jpg?ph=true"
+	},
+	{
+		"id": "5",
+		"name": "Omnimin - 300 tabl.",
+		"price": 469,
+		"currency": "DKK",
+		"img": "https://www.med24.dk/imgsrv/2024-01-25/96572/1/3690.jpg?c=IzoCj3"
+	}
+	
+]
