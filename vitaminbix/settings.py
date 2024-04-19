@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-f7n94z$clf09jwo8)t!y)wn0&e@+q7d12bfq*k_tey1et20pne'
-
+FIELD_ENCRYPTION_KEY = 'AuT33OX_zrBor1ecKNX6sbrHsx-J3uqxfbhfA5P5w6I='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'vitaminbix',
     'product_app',
     'users_app'
+    'encrypted_model_fields'
 ]
 
 MIDDLEWARE = [
