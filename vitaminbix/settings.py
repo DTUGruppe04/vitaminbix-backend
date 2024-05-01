@@ -25,6 +25,13 @@ FIELD_ENCRYPTION_KEY = 'AuT33OX_zrBor1ecKNX6sbrHsx-J3uqxfbhfA5P5w6I='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'vitbix123@gmail.com'
+EMAIL_HOST_PASSWORD = 'eqdkacvhefzqmobf'
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 ALLOWED_HOSTS = []
 
 
