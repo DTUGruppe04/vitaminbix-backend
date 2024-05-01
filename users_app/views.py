@@ -1,10 +1,13 @@
+from django.core.mail import send_mail
 from django.shortcuts import render
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, response
 from django.utils import timezone
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
 from users_app.models import UserOrder
+from vitaminbix import settings
+
 
 # Create your views here.
 @csrf_exempt
@@ -22,6 +25,13 @@ def add_user_order(request):
             address2=data['address2'],
             order_date=timezone.now())
         user_order.save()
+        send_mail(
+            "Purchase complete",
+            "Thank you for you for your order!",
+            settings.EMAIL_HOST_USER,
+            [user_order.email],
+            fail_silently=False,
+        )
         return HttpResponse('user order added successfully!')
     else:
         return HttpResponse('Invalid Request', status=400)
