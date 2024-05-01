@@ -4,4 +4,7 @@
     <option name="sdkName" value="/usr/bin/python3" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="/usr/bin/python3" project-jdk-type="Python SDK" />
+  <component name="PyCharmProfessionalAdvertiser">
+    <option name="shown" value="true" />
+  </component>
 </project>

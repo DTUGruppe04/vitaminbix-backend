@@ -4,6 +4,7 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
 from product_app.models import Book
+from product_app.models import Product
 
 
 # Create your views here.
@@ -30,3 +31,21 @@ def get_books(request):
     books = Book.objects.all()
     book_list_serialized = serializers.serialize('json', books)
     return JsonResponse(book_list_serialized, safe=False)
+
+# Add items from json
+def add_products(request):
+    temp = open('product_app/data.json')
+    data = json.load(temp)
+
+    for i in range(len(data)):
+        products = Product(data[i]['id'], data[i]['name'], data[i]['price'],
+                      data[i]['currency'], data[i]['img'])
+        products.save()
+
+    return HttpResponse('Products added succesfully!', status=200)
+
+# Return all products
+def get_products(request):
+    products = Product.objects.all()
+    product_list_serialized = serializers.serialize('json', products)
+    return JsonResponse(product_list_serialized, safe=False)
