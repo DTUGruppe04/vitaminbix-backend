@@ -11,4 +11,5 @@ class UserOrder(models.Model):
     zipcode = EncryptedCharField(max_length=100)
     address1 = EncryptedCharField(max_length=100)
     address2 = EncryptedCharField(max_length=100)
+    products = models.ManyToManyField('product_app.Product')
     order_date = models.DateField()

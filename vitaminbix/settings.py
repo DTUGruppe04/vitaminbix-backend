@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'vitaminbix',
     'product_app',
-    'users_app'
+    'users_app',
     'encrypted_model_fields'
 ]
 

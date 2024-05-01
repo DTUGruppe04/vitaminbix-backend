@@ -13,3 +13,6 @@ class Product(models.Model):
     price = models.IntegerField()
     currency = models.CharField(max_length=3)
     img = models.CharField(max_length=400)
+
+    def __str__(self):
+        return f"Name: {self.name}, Price: {self.price}{self.currency}, {self.img}"
