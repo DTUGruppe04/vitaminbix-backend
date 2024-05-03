@@ -8,10 +8,16 @@ from django.core import serializers
 from users_app.models import UserOrder
 from vitaminbix import settings
 from product_app.models import Product
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
 # Create your views here.
 @csrf_exempt
+@api_view(['POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def add_user_order(request):
     from product_app.models import Product
 
@@ -53,6 +59,9 @@ def add_user_order(request):
     else:
         return HttpResponse('Invalid Request', status=400)
 
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def get_user_orders(request):
     user_orders = UserOrder.objects.all()
     user_order_list = []

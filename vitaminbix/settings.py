@@ -34,7 +34,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,7 +47,8 @@ INSTALLED_APPS = [
     'vitaminbix',
     'product_app',
     'users_app',
-    'encrypted_model_fields'
+    'encrypted_model_fields',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -61,6 +61,18 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ]
+}
 
 CORS_ALLOW_ALL_ORIGINS = True
 
