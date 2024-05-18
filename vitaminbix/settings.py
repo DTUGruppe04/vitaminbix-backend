@@ -21,12 +21,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-f7n94z$clf09jwo8)t!y)wn0&e@+q7d12bfq*k_tey1et20pne'
-
+FIELD_ENCRYPTION_KEY = 'AuT33OX_zrBor1ecKNX6sbrHsx-J3uqxfbhfA5P5w6I='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'vitbix123@gmail.com'
+EMAIL_HOST_PASSWORD = 'eqdkacvhefzqmobf'
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -40,6 +46,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'vitaminbix',
     'product_app',
+    'users_app',
+    'encrypted_model_fields',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +61,18 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ]
+}
 
 CORS_ALLOW_ALL_ORIGINS = True
 
